@@ -53,6 +53,12 @@
   border-radius: .2rem;
 }
 
+.sideInfo_para{
+    background-color: #9a02ac;
+    padding: .5rem;
+    border-radius: .2rem;
+}
+
 .card{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -72,7 +78,7 @@
 
 /* User List*/
 
-.createdVoter{
+.createdVoter__info{
     background-color: #231e39;
     border-radius: 25px;
     box-shadow: 10px 10px 15px rgba(0,0,0,0.35);
@@ -96,13 +102,13 @@
     padding: 2rem;
 }
 
-.voter__containter__box{
+.voter__container__box{
     text-align: center;
     border: 1px dotted #9a02ac;
     border-radius: 5px;
 }
 
-.voter__containter__box p{
+.voter__container__box p{
     line-height: .5s;
 }
 

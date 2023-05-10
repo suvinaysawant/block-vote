@@ -85,6 +85,15 @@ const fetchContract = (signerOrProvider) =>
             }
         };
         
+        // CreatIng Voter 
+
+        const createVoter = async(formInput, fileUrl, router)=> {
+            try {
+                const { name, address, position } = formInput;
+            } catch (error) {
+                setError("Error in Creating Voter.")
+            }
+        }
         
         return <VotingContext.Provider value={{ votingTitle, checkIfWalletIsConnected, connectWallet, uploadToIPFS }}>
             {children}

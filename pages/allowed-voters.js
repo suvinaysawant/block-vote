@@ -6,7 +6,7 @@ import Image from 'next/image';
 // Internel Import
 import { VotingContext } from '@/context/Voter';
 import Style from '../styles/allowedVoter.module.css';
-import images from '../assets/candidate-1.jpg';
+import image from '../assets';
 import Button from '../components/Button/Button';
 import Input from  '../components/Input/Input';
 
@@ -20,7 +20,7 @@ const allowedVoters = () => {
   });
 
   const router =useRouter();
-  const { uploadToIPFS } = useContext(VotingContext);
+  const { uploadToIPFS, createVoter } = useContext(VotingContext);
 
   //Voter Image Drop
   const onDrop = useCallback(async (acceptedFil) => {
@@ -96,7 +96,7 @@ const allowedVoters = () => {
                   <p>Upload File: JPG, PNG, GIF, WEBM Max 10MB</p>
 
                   <div className={Style.voter__container__box__div__image}>
-                    <Image  src ={images}
+                    <Image  src ={images.upload}
                       width={150}
                       height={150}
                       objectFit="contain"
@@ -130,13 +130,13 @@ const allowedVoters = () => {
            handaleClick={(e)=> 
            setFormInput({ ...formInput,position: e.target.value })}/>
            <div className={Style.Button}>
-            <Button btnName="Authorized Voter" handaleClick={()=>{}} />
+            <Button btnName="Authorized Voter" handaleClick={()=> createVoter(formInput, fileUrl, router)} />
            </div>
       </div>
     </div>
     <div className={Style.createdVoter}>
       <div className={Style.createdVoter__info}>
-            <Image src={images} alt="user Profile"/>
+            <Image src={images.creator} alt="user Profile"/>
             <p>Notice For User</p>
             <p>
               Organizer <span>0x939929...</span>
